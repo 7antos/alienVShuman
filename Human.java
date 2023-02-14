@@ -1,7 +1,7 @@
 public class Human {
     
     // Default weapons
-    private final Weapon sword=new Weapon("Sword", 10);
+    private final Weapon sword=new Weapon("Sword", 25);
 
     private String name;
     private int maxHealth;
@@ -14,15 +14,13 @@ public class Human {
         this.health=this.maxHealth;
         this.weapon=sword;
     }
-
-    /**
-     * Use Weapon on target
-     * @param human target
-     */
-    public void use(Human human){}
-
+    
     String getName(){return this.name;}
     int getMaxHealth(){return this.maxHealth;}
     int getHealth(){return this.health;}
+	void setHealth(int health) {
+        this.health=health;
+	}
     Weapon getWeapon(){return this.weapon;}
+
 }
