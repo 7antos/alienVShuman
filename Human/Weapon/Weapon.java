@@ -1,9 +1,12 @@
-public class Weapon {
+package Human.Weapon;
+import Human.Human;
+
+public class Weapon implements Comparable<Weapon>{
     
     private String name;
     private int value;
 
-    public Weapon(String name, int value){
+    public Weapon(String name, int value) {
         this.name=name;
         this.value=value;
     }
@@ -32,4 +35,15 @@ public class Weapon {
     public int getValue() {
 		return this.value;
 	}
+
+    @Override
+    public int compareTo(Weapon o) {
+        if(!this.name.equals(o.name)) return this.name.compareTo(o.name);
+        else return o.value - this.value;
+    }
+
+    @Override
+    public String toString(){
+        return this.name;
+    }
 }

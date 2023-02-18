@@ -1,6 +1,7 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Scanner;
+import java.util.concurrent.TimeUnit;
+
+import Human.Human;
+import Printable.Printable;
 import java.awt.AWTException;
 import java.io.IOException;
 
@@ -9,22 +10,15 @@ import java.io.IOException;
  */
 public class Enviroment {
 
-    final static ArrayList<Human> humans=new ArrayList<>(Arrays.asList(
-        new Human("Pedro Santos", 100),
-        new Human("Andre Mendes", 100)));
-
-    private final static Scanner sc=new Scanner(System.in);
+    Human player1=new Human("Ricardo Monteiro", 100,"intro/keanu.txt");
 
     public static void main(String[] main) throws IOException, InterruptedException, AWTException{
-        int turn=0;
-        while(humans.size()>1){
-            Human human=humans.get(turn%humans.size());
-            Human target=humans.get((turn+1)%humans.size());
-            Weapon weapon=selectAction(human, sc);
-            weapon.use(target);
-        }
-        sc.close();
+        // printIntro();
+        Printable intro=new Printable("textImages/box.txt");
+        intro.printEnterLeft(1/10);
+        TimeUnit.SECONDS.sleep(5);
+        intro.printExitLeft(1/10);
+        Printable.clrscr();
     }
 
-    private static Weapon selectAction(Human human,Scanner sc) {return null;}
 }

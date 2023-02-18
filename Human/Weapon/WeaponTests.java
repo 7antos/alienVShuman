@@ -1,7 +1,10 @@
+package Human.Weapon;
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Before;
 import org.junit.Test;
+
+import Human.Human;
 
 public class WeaponTests {
 
@@ -11,8 +14,8 @@ public class WeaponTests {
     
     @Before
     public void beforeTests(){
-        human2=new Human("Andre Mendes", 100);
-        weakHuman=new Human("Andre Mendes", 1);
+        human2=new Human("Andre Mendes", 100, null);
+        weakHuman=new Human("Andre Mendes", 1, null);
         weapon1=new Weapon("Sword", 25);
     }
 
